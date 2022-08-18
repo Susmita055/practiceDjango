@@ -1,0 +1,27 @@
+{% extends "base.html" %} 
+{% block content %}
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-8">
+    <div class="card">
+        <div class="card-header ">
+          Title:{{course.title}}
+          
+        </div>
+        <div class="card-body">
+          <p class="card-text">{{course.description}} </p> 
+        </div>
+        <div class="card-footer">
+            
+          {% if course.created_by.image %}
+          <img src="{{request.user.image.url}}">
+          {%else %}
+          <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg">
+
+          {% endif %}
+          {{course.created_by.first_name}}
+        </div>
+      </div>
+      </div>
+{% endblock content %}
+

@@ -1,0 +1,34 @@
+{% extends "base.html"%}
+{% block content%}
+{% for number in numbers %}
+
+{% if number|divisibleby:2 %} 
+<div>
+    {{number}} is even
+</div>
+
+
+{% elif number is 0%}
+<div>
+    zero
+</div>
+
+
+{% else%}
+<div>
+    {{number}}is odd
+</div>
+
+
+
+
+
+{% endif %}
+
+
+
+{% endfor %}
+
+
+{% endblock content %}
+
